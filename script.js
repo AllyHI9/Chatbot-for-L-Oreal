@@ -1,10 +1,12 @@
 // script.js
 
-const apiKey = (typeof window !== 'undefined' && window.OPENAI_API_KEY) ? window.OPENAI_API_KEY : null;
+//const apiKey = (typeof window !== 'undefined' && window.OPENAI_API_KEY) ? window.OPENAI_API_KEY : null;
 
 const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendBtn = document.getElementById('send-btn');
+// REPLACE with your actual Cloudflare Worker URL
+const apiKey = 'https://green-glade-add1.ahinkofe.workers.dev/'; 
 
 function addMessage(role, text) {
   const message = document.createElement('div');
@@ -31,12 +33,14 @@ async function sendMessage() {
     { role: 'user', content: userText }
   ];
 
+
+
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://green-glade-add1.ahinkofe.workers.dev/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
+        
       },
       body: JSON.stringify({ model: 'gpt-4o-mini', messages })
     });
