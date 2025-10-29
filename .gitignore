@@ -1,0 +1,2 @@
+# Ignore local files containing secrets
+api_key.js
