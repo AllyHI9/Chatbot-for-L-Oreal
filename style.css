@@ -1,98 +1,115 @@
 /* style.css */
 
-
 body {
-background: #f9f9f9;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
+  background: #ECCFC7;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
-
 
 .chat-container {
-background: #fff;
-border-radius: 12px;
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-width: 400px;
-max-width: 90%;
-display: flex;
-flex-direction: column;
-overflow: hidden;
+  background: #ECCFC7;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80vh; /* Keep the entire chat window on screen */
 }
 
+/* Logo container placed at the top middle of the chat container */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+}
+
+#loreal-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
 
 h1 {
-background: #e6007e;
-color: white;
-padding: 16px;
-margin: 0;
-text-align: center;
-font-size: 1.4rem;
+  background: #000000;
+  color: #ffffff;
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
 }
-
 
 .chat-box {
-flex: 1;
-padding: 16px;
-overflow-y: auto;
-display: flex;
-flex-direction: column;
-gap: 10px;
-background-color: #fafafa;
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto; /* Enables vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fafafa;
+  max-height: calc(80vh - 120px); /* Keeps the box scrollable within view */
+  scrollbar-width: thin;
+  scrollbar-color: #FF003B #f0f0f0;
 }
 
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #FF003B;
+  border-radius: 4px;
+}
 
 .user, .bot {
-padding: 10px 14px;
-border-radius: 16px;
-max-width: 80%;
-line-height: 1.4;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 80%;
+  line-height: 1.4;
 }
-
 
 .user {
-background-color: #e6007e;
-color: white;
-align-self: flex-end;
+  background-color: #FF003B;
+  color: white;
+  align-self: flex-end;
 }
-
 
 .bot {
-background-color: #eee;
-color: #333;
-align-self: flex-start;
+  background-color: #eee;
+  color: #333;
+  align-self: flex-start;
 }
-
 
 .input-container {
-display: flex;
-border-top: 1px solid #ddd;
+  display: flex;
+  border-top: 1px solid #ddd;
 }
-
 
 #user-input {
-flex: 1;
-padding: 12px;
-border: none;
-outline: none;
-font-size: 1rem;
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
-
 
 #send-btn {
-background: #e6007e;
-color: white;
-border: none;
-padding: 12px 18px;
-cursor: pointer;
-font-weight: bold;
-transition: background 0.3s;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-
 #send-btn:hover {
-background: #cc0072;
+  background: #cc0072;
 }
